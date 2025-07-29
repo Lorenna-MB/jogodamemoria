@@ -80,14 +80,28 @@ button{
     width: 25px;
 }
 
-.loginPokemon:disabled{
+.loginPokemon:disabled{ /*colocar um hover*/
     background-color: #bababa;
     color:#333;
     cursor: auto;
+    cursor: not-allowed;
+
 }
 
 .loginHxh:disabled{
     background-color: #bababa;
     color:#333;
     cursor: auto;
+    cursor: not-allowed;
+
 }
+
+.loginHxh:disabled:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #b92929;
+}
+.loginPokemon:disabled:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #b92929;
+}
+

@@ -36,7 +36,6 @@ let points = 0;
 function sumPoints(){
     points +=1;
     document.getElementById('point').textContent= points;
-    
 }
 
 let segundos = 0;
@@ -46,16 +45,14 @@ function startTime(){
         segundos++;
         document.getElementById('timer').textContent= `${segundos}s`;
     },1000);
-}
+} 
+/*criar a variável minuto, e toda vez que segundos for igual a 60, minuto++ e segundos = 0 
+usar o clearinterval(testar no resetgame)*/
+
 let resetTime=0;
 
 const playButton = document.getElementById('play-button');
 const botaoVoltar = document.querySelector('.buttonReturn');
-
-function resetGame(){
-    firstCard= '';
-    secondCard= '';
-}
 
 function resetGame(){
     firstCard='';
@@ -69,6 +66,7 @@ function resetGame(){
     grid.innerHTML = '';
 
     document.getElementById('play-button').style.display = 'block';
+    console.log('o jogo foi reiniciado');
 }
 
 const checkEndGame = () =>{
