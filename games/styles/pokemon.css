@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pokemon-hollow');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Press Start 2P", system-ui;
 }
 
 html, body {
@@ -19,17 +18,16 @@ html, body {
 }
 
 header {
-  font-family: "Press Start 2P", system-ui;
-  font-weight: 400;
-  width: 400px;
-  background-color: rgba(255, 255, 255, 0.85);
-  color: rgb(253, 124, 3);
+  font-family: 'Pokemon Hollow', sans-serif;
+  width: 350px;
+  background-color: #c0dfff;
+  color: rgb(0, 0, 0);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  box-shadow: #000000 2px 2px 2px 1px;
+  opacity: 0.9;
 }
 
 .cabecalho{
@@ -40,18 +38,34 @@ header {
     margin-bottom: 20px;
 }
 
+/*header{
+    font-family: 'Pokemon Hollow', sans-serif;font-family: 'Pokemon Hollow', sans-serif;
+    color:#000000;
+>>>>>>> c248d7c5cc37925f5a71bd6fe143b9829d1ad640
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+=======
+    flex-wrap: wrap;
+    height: 150px;
+    padding: 5px;
+}*/
+
 header h1{
     text-align: center;
     margin: 0;
-    text-shadow: #000 2px 2px;
 }
 
 .logo{
-    width: 300px;
-    height: auto;
+    width: 150px;
+    height: 50px;
 }
 
 .placar{
+    font-family: "Press Start 2P", system-ui;
     display: flex;
     align-items: flex-start;
     background-color: #ffb006;
@@ -67,7 +81,7 @@ header h1{
 }
 
 body{
-    background-image: url('../assets/wallpaperHunter.jpg');
+    background-image: url('../../assets/wallpaperPokemon.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -75,21 +89,20 @@ body{
 }
 
 #play-button {
-    font-family: "Press Start 2P", system-ui;
     font-size: 30px;
     padding-right: 50px;
     padding-left: 50px;
-    background-color: #ffb006;
-    color: #043a06;
-    border: 3px solid #ffde07;
+    background-color: #f8e02d;
+    color: #000;
+    border: 3px solid #0b004f;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: #000000 7px 4px;
-    height: 50px;
-
+    font-family: "Press Start 2P", system-ui;
+    height: auto;
+    font-family: 'Pokemon Solid', sans-serif;
     /* Centralização absoluta */
     position: absolute;
-    top: 45%;
+    top: 30%;
     left: 55%;
     transform: translate(-50%, -50%);
     
@@ -107,7 +120,6 @@ body{
    right: 94%;
    cursor: pointer;
 }
-
 
 .grid{
     display: grid;
@@ -145,8 +157,7 @@ body{
 
 .back{      
     backface-visibility: hidden;
-    background-image: url('../assets/cardHunter.jpg');
-    border: 4px solid #e1e0e0;
+    background-image: url('../../assets/pokemoncard.png');
 }
 
 .reveal-card{
@@ -159,6 +170,7 @@ body{
 }
 
 .player{
+    font-family: "Press Start 2P", system-ui;
     margin-top: 30px;
     background-color: #ff860c;
     color: #fff;

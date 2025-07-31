@@ -4,6 +4,13 @@ const buttonHxh = document.querySelector('.loginHxh');
 const form = document.querySelector('.login-form');
 const openModalButton = document.querySelector('.open-modal');
 
+let gameConfig = {
+    playerName: '',
+    theme: '',
+    modo: '',
+    difficulty: '',
+};
+
 const validateInput = ({ target }) => {
     const isValid = target.value.length > 1 && target.value.length <= 15;
 
@@ -13,18 +20,21 @@ const validateInput = ({ target }) => {
 };
 
 const handleClick = (destination) => {
-    localStorage.setItem('player', input.value);
+    localStorage.setItem('config', JSON.stringify(gameConfig));
     window.location = destination;
 };
 
 input.addEventListener('input', validateInput);
 
+
 buttonPokemon.addEventListener('click', () => {
-    handleClick('./memoryPokemon/pokemon.html'); 
+    gameConfig.theme= 'pokemon';
+    handleClick('./games'); 
 });
 
 buttonHxh.addEventListener('click', () => {
-    handleClick('./memoryHunter/hunter.html');
+    gameConfig.theme= 'hunter';
+    handleClick('./games')
 });
 
 const openButtons = document.querySelectorAll('.open-modal');
