@@ -15,11 +15,15 @@
         <img src="./assets/memoryIcon.png" alt="Ícone jogo da memória">
         <h1>Jogo da Memória</h1>
     </div>
-
     <input type="text" placeholder="Digite seu nick" class="login-input">
-    <h2>Escolha o tema:</h2>
-    <button type="submit" class="loginPokemon" disabled>Pokemon <img class="pokemonButton" src="./assets/iconPokemon.png" alt="Ícone pokemon"></button>
-    <button type="submit" class="loginHxh" disabled>Hunter x Hunter<img class="hxhButton" src="./assets/logoHxh.png" alt="Ícone Hunter x Hunter"></button>
+
+    <button class="open-modal" data-modal="modal-1" disabled>Play</button>
+    <dialog id="modal-1">
+        <h2>Escolha o tema</h2>
+        <button class="loginPokemon">Pokemon <img class="pokemonButton" src="./assets/iconPokemon.png" alt="Ícone pokemon"></button>
+        <button class="loginHxh">Hunter x Hunter<img class="hxhButton" src="./assets/logoHxh.png" alt="Ícone Hunter x Hunter"></button>
+        <button class="close-modal" data-modal="modal-1">✖</button>
+    </dialog>
 
 </main>
 

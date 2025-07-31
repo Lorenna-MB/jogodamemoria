@@ -55,7 +55,7 @@ input{
 }
 
 button{
-    background-color: rgb(139, 191, 210);
+    background-color: rgb(186, 155, 253);
     color:rgb(5, 5, 5);
     font-size: 1em;
     width: 100%;
@@ -96,6 +96,13 @@ button{
 
 }
 
+.open-modal:disabled{
+    background-color: #bababa;
+    color:#333;
+    cursor: auto;
+    cursor: not-allowed;
+}
+
 .loginHxh:disabled:hover{
     transform: translateY(3px);
     box-shadow: 2px 3px #b92929;
@@ -104,4 +111,52 @@ button{
     transform: translateY(3px);
     box-shadow: 2px 3px #b92929;
 }
+.open-modal:disabled:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #b92929;
+}
 
+
+dialog {
+  /* Não defina display aqui */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: none;
+  border-radius: 10px;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 400px;
+  background-color: rgb(231, 211, 248);
+
+  text-align: center; /* centraliza texto */
+}
+
+dialog > * {
+  margin-bottom: 10px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+dialog .close-modal {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 80px;
+}
+
+dialog.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
