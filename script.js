@@ -17,6 +17,7 @@ const validateInput = ({ target }) => {
     buttonHxh.disabled = !isValid;
     buttonPokemon.disabled = !isValid;
     openModalButton.disabled = !isValid;
+
 };
 
 const handleClick = (destination) => {

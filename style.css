@@ -80,12 +80,22 @@ button{
     width: 25px;
 }
 
+.loginHxh:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #4700a9;
+}
+
+.loginPokemon:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #4700a9;
+}
+
+
 .loginPokemon:disabled{ /*colocar um hover*/
     background-color: #bababa;
     color:#333;
     cursor: auto;
     cursor: not-allowed;
-
 }
 
 .loginHxh:disabled{
@@ -116,6 +126,11 @@ button{
     box-shadow: 2px 3px #b92929;
 }
 
+.open-modal:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #4700a9;
+}
+
 
 dialog {
   /* Não defina display aqui */
@@ -128,7 +143,7 @@ dialog {
   border-radius: 10px;
   padding: 2rem;
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   width: 90%;
   max-width: 400px;
   background-color: rgb(231, 211, 248);
@@ -159,4 +174,29 @@ dialog.active {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.players{
+    display: flex;
+    justify-content: row;
+    gap: 35px;
+    width: 250px;
+    align-items: center;
+    padding: 10px;
+    font-size:0.85em;
+}
+
+.Player1:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #4700a9;
+}
+
+.Player2:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #4700a9;
+}
+
+.close-modal:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #b92929;
 }

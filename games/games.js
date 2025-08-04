@@ -1,29 +1,30 @@
+const characters = {
+    pokemons: [
+        'pikachu',
+        'charmander',
+        'cubone',
+        'gengar',
+        'snorlax',
+        'mewtwo',
+        'jigglypuff',
+        'psyduck',
+        'bulbasaur',
+        'squirtle',
+    ],
+    hunters: [
+        'alluka',
+        'chrollo',
+        'gon',
+        'hisoka',
+        'kaito',
+        'killua',
+        'komugi',
+        'meruem',
+        'kurapika',
+        'leorio',
+    ]
+};
 
-const pokemons= [
-    'pikachu',
-    'charmander',
-    'cubone',
-    'gengar',
-    'snorlax',
-    'mewtwo',
-    'jigglypuff',
-    'psyduck',
-    'bulbasaur',
-    'squirtle',
-]
-
-const character= [
-    'alluka',
-    'chrollo',
-    'gon',
-    'hisoka',
-    'kaito',
-    'killua',
-    'komugi',
-    'meruem',
-    'kurapika',
-    'leorio',
-]
 
 const grid = document.querySelector('.grid');
 const playerName = localStorage.getItem('player');
@@ -87,10 +88,10 @@ const checkEndGame = () =>{
 }
 
 const checkCards = () => {
-    const firstPokemon = firstCard.getAttribute('data-pokemons');
-    const secondPokemon = secondCard.getAttribute('data-pokemons');
+    const firstCharacter = firstCard.getAttribute('data-character');
+    const secondCharacter = secondCard.getAttribute('data-character');
 
-    if (firstPokemon === secondPokemon){
+    if (firstCharacter === secondCharacter){
 
         firstCard.firstChild.classList.add('disabled-card');
         secondCard.firstChild.classList.add('disabled-card');
@@ -135,41 +136,44 @@ const revealCard = ({target}) =>{
     }
 }
 
-const createCards = (pokemons) => {
+const createCards = (characterName, theme) => {
 
     const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
+    const path = theme === 'pokemon' 
+     ? `../../assets/pokemons/${characterName}.jpg`
+     : `../../assets/character/${characterName}.jpg`;
 
-    front.style.backgroundImage = `url('../assets/pokemons/${pokemons}.jpg')`;
+front.style.backgroundImage = `url('${path}')`;
 
     card.appendChild(front);
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
-    card.setAttribute('data-pokemons', pokemons)
+    card.setAttribute('data-character', characterName);
 
     return card;
 }
 
 const loadGame = () => {
+    const { theme } = config;
 
-    const duplicatePokemons = [...pokemons, ...pokemons];
+    const charactersArray = theme === 'pokemon' ? characters.pokemons : characters.hunters;
+    
+    const duplicateCharacters = [...charactersArray, ...charactersArray];
+    const shuffled = duplicateCharacters.sort(() => Math.random() - 0.5);
 
-    const embaralhar = duplicatePokemons.sort( () => Math.random() - 0.5 );
-
-    embaralhar.forEach((pokemons)=> {
-        const card = createCards(pokemons);
+   
+    shuffled.forEach((character) => {
+        const card = createCards(character, theme);
         grid.appendChild(card);
-
     });
-
 }
-
 
 const loadScreen = () => {
 
-    const {theme, playerName, difficulty, modo} = config
+    const {theme, difficulty, modo} = config
     
     let head = document.getElementsByTagName('HEAD')[0];
     let link = document.createElement('link');
@@ -192,11 +196,12 @@ const loadScreen = () => {
     /*document.querySelector('title').textContent = theme === "pokemon" ? "Jogo da Memória - Pokemon" : "Jogo da Memória - Hunter";*/
     document.querySelector('title').textContent = title[theme];
     document.querySelector('.logo').setAttribute('src',logo[theme]);
-        
+    
 }
 
 playButton.addEventListener('click', () => {
     playButton.style.display = 'none';
+    document.querySelector('.player').textContent = playerName ? playerName : 'Player: Anônimo';
     startTime();
     loadGame(); 
 });

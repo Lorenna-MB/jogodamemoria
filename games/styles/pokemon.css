@@ -78,6 +78,7 @@ header h1{
     width: 300px;
     margin: 0;
     flex-direction: column;
+    box-shadow: #000 2px 2px;
 }
 
 body{
@@ -105,7 +106,6 @@ body{
     top: 30%;
     left: 55%;
     transform: translate(-50%, -50%);
-    
 }
 
 .buttonReturn{
@@ -119,6 +119,11 @@ body{
    top: 96%;
    right: 94%;
    cursor: pointer;
+}
+
+.buttonReturn:hover{
+    transform: translateY(3px);
+    box-shadow: 2px 3px #b35e03;
 }
 
 .grid{
@@ -180,4 +185,5 @@ body{
     text-shadow: 2px 2px #000;
     word-break: break-word;
     max-width: 84%;
+    box-shadow: #000 2px 2px;
 }
