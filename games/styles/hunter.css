@@ -67,7 +67,7 @@ header h1{
 }
 
 body{
-    background-image: url('../../assets/wallpaperHunter.jpg');
+    background-image: url('../assets/wallpaperHunter.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
