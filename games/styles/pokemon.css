@@ -82,7 +82,7 @@ header h1{
 }
 
 body{
-    background-image: url('../assets/wallpaperPokemon.png');
+    background-image: url('../../assets/wallpaperPokemon.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
