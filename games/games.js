@@ -142,8 +142,8 @@ const createCards = (characterName, theme) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
     const path = theme === 'pokemon' 
-     ? `../../assets/pokemons/${characterName}.jpg`
-     : `../../assets/character/${characterName}.jpg`;
+     ? `../assets/pokemons/${characterName}.jpg`
+     : `../assets/character/${characterName}.jpg`;
 
 front.style.backgroundImage = `url('${path}')`;
 
@@ -182,8 +182,8 @@ const loadScreen = () => {
         hunter: "Jogo da Memória - HxH"
     }
     let logo = {
-        pokemon: '../../assets/pokemonLogo.png',
-        hunter: '../../assets/hunterLogo.png'
+        pokemon: '../assets/pokemonLogo.png',
+        hunter: '../assets/hunterLogo.png'
     }
 
     link.rel = 'stylesheet';
