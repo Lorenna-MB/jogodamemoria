@@ -14,6 +14,8 @@ let gameConfig = {
 const validateInput = ({ target }) => {
     const isValid = target.value.length > 1 && target.value.length <= 15;
 
+    gameConfig.playerName = target.value;
+
     buttonHxh.disabled = !isValid;
     buttonPokemon.disabled = !isValid;
     openModalButton.disabled = !isValid;
