@@ -1,4 +1,4 @@
-const grid = document.querySelector('.grid');
+/*const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 
 const playerName = localStorage.getItem('player');
@@ -166,3 +166,4 @@ playButton.addEventListener('click', () => {
 botaoVoltar.addEventListener('click', () => {
     window.location.href = '../index.html';
 });
+*/
