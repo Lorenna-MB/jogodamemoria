@@ -192,7 +192,7 @@ const loadScreen = () => {
 
     head.appendChild(link);
 
-    document.querySelector('.player').textContent = playerName ? playerName  : 'Player: Anônimo';
+    document.querySelector('.player').textContent = config.playerName ? config.playerName : 'Player: Anônimo';
     /*document.querySelector('title').textContent = theme === "pokemon" ? "Jogo da Memória - Pokemon" : "Jogo da Memória - Hunter";*/
     document.querySelector('title').textContent = title[theme];
     document.querySelector('.logo').setAttribute('src',logo[theme]);

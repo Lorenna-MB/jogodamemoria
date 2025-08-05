@@ -1,4 +1,4 @@
-const grid = document.querySelector('.grid');
+/*const grid = document.querySelector('.grid');
 
 const spanPlayer = document.querySelector('.player');
 
@@ -47,7 +47,7 @@ function startTime(){
     },1000);
 } 
 /*criar a variável minuto, e toda vez que segundos for igual a 60, minuto++ e segundos = 0 
-usar o clearinterval(testar no resetgame)*/
+usar o clearinterval(testar no resetgame)
 
 let resetTime=0;
 
@@ -168,3 +168,4 @@ playButton.addEventListener('click', () => {
 botaoVoltar.addEventListener('click', () => {
     window.location.href = '../index.html';
 });
+*/
