@@ -12,13 +12,18 @@
             <h1>Jogo da Memória</h1>
             <img class="logo" src="" alt="Logo do tema">
         </div>
-        <div class="placar">
+        <div class="placar-solo">
             <h3>Pontuação: <span id="point">0</span></h3>
             <h3>Tempo: <span id="timer">0s</span></h3>
         </div>
 
         <span class="player"></span>
         <button id="buttonReturn" type="submit"class="buttonReturn">Início</button>
+
+        <div class="placar placar-multiplayer" style="display: none">
+            <h3>Player 1: <span id="player1-name"></span> | Pontos: <span id="p1-score">0</span></h3>
+            <h3>Player 2: <span id="player2-name"></span> | Pontos: <span id="p2-score">0</span></h3>
+        </div>
 
     </header>
     <div class="grid"></div>

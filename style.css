@@ -205,3 +205,9 @@ dialog.active {
     transform: translateY(3px);
     box-shadow: 2px 3px #4700a9;
 }
+
+.selected {
+    border: 2px solid rgb(42, 3, 55);
+    background-color: rgb(68, 5, 110);
+    color: #fff;
+}
