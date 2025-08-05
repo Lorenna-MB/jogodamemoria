@@ -142,8 +142,8 @@ const createCards = (characterName, theme) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
     const path = theme === 'pokemon' 
-     ? `../../assets/pokemons/${characterName}.jpg`
-     : `../../assets/character/${characterName}.jpg`;
+     ? `../assets/pokemons/${characterName}.jpg`
+     : `../assets/character/${characterName}.jpg`;
 
 front.style.backgroundImage = `url('${path}')`;
 
@@ -172,8 +172,7 @@ const loadGame = () => {
 }
 
 const loadScreen = () => {
-
-    const {theme, difficulty, modo} = config
+    const {theme, difficulty, modo, playerName} = config;
     
     let head = document.getElementsByTagName('HEAD')[0];
     let link = document.createElement('link');
@@ -182,22 +181,34 @@ const loadScreen = () => {
         hunter: "Jogo da Memória - HxH"
     }
     let logo = {
-        pokemon: '../../assets/pokemonLogo.png',
-        hunter: '../../assets/hunterLogo.png'
+        pokemon: '../assets/pokemonLogo.png',
+        hunter: '../assets/hunterLogo.png'
     }
 
     link.rel = 'stylesheet';
-    link.type = 'text/css'
+    link.type = 'text/css';
     link.href = `./styles/${theme}.css`;
 
     head.appendChild(link);
 
-    document.querySelector('.player').textContent = config.playerName ? config.playerName : 'Player: Anônimo';
-    /*document.querySelector('title').textContent = theme === "pokemon" ? "Jogo da Memória - Pokemon" : "Jogo da Memória - Hunter";*/
     document.querySelector('title').textContent = title[theme];
     document.querySelector('.logo').setAttribute('src',logo[theme]);
+
+    // gerenciar placares
+    if (modo === '1') {
+        document.querySelector('.placar').style.display = 'block';
+        document.querySelector('.placar-multiplayer').style.display = 'none';
+        document.querySelector('.player').style.display = 'block';
+        document.querySelector('.player').textContent = `Player: ${playerName || 'Anônimo'}`;
+    } else if (modo === '2') {
+        document.querySelector('.placar').style.display = 'none';
+        document.querySelector('.placar-multiplayer').style.display = 'block';
+        document.querySelector('.player').style.display = 'none';
+        document.getElementById('player1-name').textContent = playerName || 'Player 1';
+        document.getElementById('player2-name').textContent = 'P2';
+    }
+};
     
-}
 
 playButton.addEventListener('click', () => {
     playButton.style.display = 'none';

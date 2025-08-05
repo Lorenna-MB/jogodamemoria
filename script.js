@@ -32,25 +32,43 @@ const handleClick = (destination) => {
 
 input.addEventListener('input', validateInput);
 
+const validateBeforeStart = () => {
+    if (
+        gameConfig.playerName &&
+        gameConfig.theme &&
+        gameConfig.modo &&
+        gameConfig.difficulty
+    ) {
+        localStorage.setItem('config', JSON.stringify(gameConfig));
+        window.location = './games';
+    } else {
+        alert('Por favor, preencha todas as opções:\n- Quantidade de jogadores \n- Dificuldade \n- Tema');
+    }
+};
+
+buttonPokemon.addEventListener('click', (event) => {
+    event.preventDefault(); // 🚫 Impede redirecionamento automático
+    gameConfig.theme = 'pokemon';
+    validateBeforeStart();
+});
+
+buttonHxh.addEventListener('click', (event) => {
+    event.preventDefault(); // 🚫 Impede redirecionamento automático
+    gameConfig.theme = 'hunter';
+    validateBeforeStart();
+});
+
 dificuldadeButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const dificuldadeSelecionada = button.getAttribute('data-dif');
-        gameConfig.difficulty = dificuldadeSelecionada;
+        if (dificuldadeSelecionada) {
+            gameConfig.difficulty = dificuldadeSelecionada;
 
-        console.log('Dificuldade salva:', gameConfig.difficulty);
+            // Visual feedback
+            dificuldadeButtons.forEach(b => b.classList.remove('selected'));
+            button.classList.add('selected');
+        }
     });
-});
-
-buttonPokemon.addEventListener('click', () => {
-    gameConfig.theme = 'pokemon';
-    localStorage.setItem('config', JSON.stringify(gameConfig));
-    window.location = './games'; 
-});
-
-buttonHxh.addEventListener('click', () => {
-    gameConfig.theme = 'hunter';
-    localStorage.setItem('config', JSON.stringify(gameConfig));
-    window.location = './games';
 });
 
 const openButtons = document.querySelectorAll('.open-modal');
@@ -76,11 +94,12 @@ closeButtons.forEach(button => {
 
 buttonPlayer1.addEventListener('click', () => {
     gameConfig.modo = '1';
-    console.log('Modo de jogo: 1 jogador');
+    buttonPlayer1.classList.add('selected');
+    buttonPlayer2.classList.remove('selected');
 });
 
 buttonPlayer2.addEventListener('click', () => {
     gameConfig.modo = '2';
-    console.log('Modo de jogo: 2 jogadores');
+    buttonPlayer2.classList.add('selected');
+    buttonPlayer1.classList.remove('selected');
 });
-
