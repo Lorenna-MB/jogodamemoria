@@ -176,6 +176,51 @@ dialog.active {
   align-items: center;
 }
 
+@media (max-width: 600px) {
+  main {
+    padding: 0.5rem;
+  }
+  .login-header {
+    max-width: 98vw;
+  }
+  img {
+    width: 180px;
+    max-width: 98vw;
+  }
+  input, button {
+    max-width: 98vw;
+    font-size: 0.95em;
+    padding: 10px;
+  }
+  .players {
+    gap: 10px;
+    width: 98vw;
+    font-size: 0.8em;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  img {
+    width: 120px;
+  }
+  h1 {
+    font-size: 1.1em;
+  }
+  h2 {
+    font-size: 0.9em;
+  }
+  .players {
+    font-size: 0.7em;
+    gap: 5px;
+  }
+  input, button {
+    font-size: 0.85em;
+    padding: 7px;
+  }
+}
+
 .players{
     display: flex;
     justify-content: row;
