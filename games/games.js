@@ -63,12 +63,26 @@ let points = 0;
 
 let segundos = 0;
 let time;
-function startTime(){
+function startTime() {
     time = setInterval(() => {
         segundos++;
-        document.getElementById('timer').textContent= `${segundos}s`;
-    },1000);
-} 
+        // Quando segundos chegar a 60, incrementa minutos e zera segundos
+        if (segundos === 60) {
+            minutos++;
+            segundos = 0;
+        }
+        // Formata os minutos e segundos para exibir dois dígitos (ex: 01:05)
+        const formatMin = minutos.toString().padStart(2, '0');
+        const formatSec = segundos.toString().padStart(2, '0');
+        // Atualiza o texto do timer na tela
+        document.getElementById('timer').textContent = `${formatMin}:${formatSec}`;
+    }, 1000);
+}
+
+// Função para parar o cronômetro
+function stopTime() {
+    clearInterval(time);
+}
 /*criar a variável minuto, e toda vez que segundos for igual a 60, minuto++ e segundos = 0 
 usar o clearinterval(testar no resetgame)*/
 
@@ -77,6 +91,7 @@ let resetTime=0;
 const playButton = document.getElementById('play-button');
 const botaoVoltar = document.querySelector('.buttonReturn');
 
+//reseta o jogo, as cartas pontos e tempo
 function resetGame(){
     firstCard = '';
     secondCard = '';
@@ -97,23 +112,8 @@ function resetGame(){
     grid.innerHTML = '';
 
     document.getElementById('play-button').style.display = 'block';
+    stopTime();
     console.log('o jogo foi reiniciado');
-}
-
-const checkEndGame = () => {
-    const disabledCards = document.querySelectorAll('.disabled-card');
-    // Determina o número de pares conforme a dificuldade
-    let numPairs = 10; // padrão: difícil
-    if (config.difficulty === 'facil' || config.difficulty === 'fácil' || config.difficulty === 'easy') numPairs = 4;
-    else if (config.difficulty === 'medio' || config.difficulty === 'médio' || config.difficulty === 'medium') numPairs = 8;
-    // difícil ou qualquer outro valor: 10 pares
-    const totalCards = numPairs * 2;
-
-    if (disabledCards.length === totalCards) {
-        clearInterval(time);
-        alert(`Parabéns, você acertou todas as cartas em ${segundos} segundos!`)
-        resetGame();
-    }
 }
 
 const checkCards = () => {
