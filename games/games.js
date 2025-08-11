@@ -116,22 +116,6 @@ function resetGame(){
     console.log('o jogo foi reiniciado');
 }
 
-const checkEndGame = () => {
-    const disabledCards = document.querySelectorAll('.disabled-card');
-    // Determina o número de pares conforme a dificuldade
-    let numPairs = 10; // padrão: difícil
-    if (config.difficulty === 'facil' || config.difficulty === 'fácil' || config.difficulty === 'easy') numPairs = 4;
-    else if (config.difficulty === 'medio' || config.difficulty === 'médio' || config.difficulty === 'medium') numPairs = 8;
-    // difícil ou qualquer outro valor: 10 pares
-    const totalCards = numPairs * 2;
-
-    if (disabledCards.length === totalCards) {
-        clearInterval(time);
-        alert(`Parabéns, você acertou todas as cartas em ${segundos} segundos!`)
-        resetGame();
-    }
-}
-
 const checkCards = () => {
     //verifica se os atributos da carta são iguais
     const firstCharacter = firstCard.getAttribute('data-character');
