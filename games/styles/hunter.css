@@ -267,7 +267,7 @@ body{
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular pequeno */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -319,6 +319,7 @@ body{
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 .grid.medium {

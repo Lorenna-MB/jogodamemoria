@@ -196,16 +196,16 @@ body{
 
 @media screen and (max-width: 768px) {
   .container {
-    flex-direction: column; /* Header em cima, conteúdo embaixo */
+    flex-direction: column; 
   }
 
   header {
-    width: 100%;            /* Ocupar toda a largura */
-    height: 130px;           /* Altura automática */
+    width: 100%;            
+    height: 130px;           
     flex-direction: column;
     align-items: center;
     padding: 5px;          
-    position: fixed;        /* Ficar no topo */
+    position: fixed;        
     top: 0;
     left: 0;
     z-index: 1000;
@@ -335,6 +335,7 @@ body{
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 .grid.medium {
