@@ -42,8 +42,16 @@ const createElement = (tag, className) => {
 //Cria duas variáveis para armazenar as duas cartas reveladas em uma jogada.
 let firstCard= ''; 
 let secondCard= '';
-
 let points = 0;
+
+const checkEndGame = () => {
+  const disabledCards = document.querySelectorAll('.disabled-card');
+
+  if (disabledCards.length === 20) {
+    clearInterval(this.loop);
+    alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+  }
+}
 
 //A função que é chamada sempre que duas cartas convergem e de acordo com o jogador atual.
  function sumPoints() {
@@ -147,6 +155,8 @@ const checkCards = () => {
                 currentPlayer = currentPlayer === 1 ? 2 : 1;
                 const turnInfo = document.querySelector('.turn-info');
                 if (turnInfo) turnInfo.textContent = `Turno: Player ${currentPlayer}`;
+                sumPoints();
+                checkEndGame();
             }
         }, 650);
     }
