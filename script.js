@@ -18,7 +18,7 @@ let gameConfig = {
 
 //Validação de nick
 const validateInput = ({ target }) => {
-    const isValid = target.value.length > 1 && target.value.length <= 15;
+  const isValid = target.value.length > 1 && target.value.length <= 15;
 
     gameConfig.playerName = target.value;
 //Habilitar os botões
@@ -110,3 +110,4 @@ buttonPlayer2.addEventListener('click', () => {
     buttonPlayer2.classList.add('selected');
     buttonPlayer1.classList.remove('selected');
 });
+

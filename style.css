@@ -113,14 +113,6 @@ button{
     cursor: not-allowed;
 }
 
-.loginHxh:disabled:hover{
-    transform: translateY(3px);
-    box-shadow: 2px 3px #b92929;
-}
-.loginPokemon:disabled:hover{
-    transform: translateY(3px);
-    box-shadow: 2px 3px #b92929;
-}
 .open-modal:disabled:hover{
     transform: translateY(3px);
     box-shadow: 2px 3px #b92929;
@@ -128,9 +120,8 @@ button{
 
 .open-modal:hover{
     transform: translateY(3px);
-    box-shadow: 2px 3px #4700a9;
+    box-shadow: 4px 4px #4700a9;
 }
-
 
 dialog {
   /* Não defina display aqui */
@@ -233,12 +224,12 @@ dialog.active {
 
 .Player1:hover{
     transform: translateY(3px);
-    box-shadow: 2px 3px #4700a9;
+    box-shadow: 3px 4px #4700a9;
 }
 
 .Player2:hover{
     transform: translateY(3px);
-    box-shadow: 2px 3px #4700a9;
+    box-shadow: 3px 4px #4700a9;
 }
 
 .close-modal:hover{
@@ -252,7 +243,7 @@ dialog.active {
 }
 
 .selected {
-    border: 2px solid rgb(42, 3, 55);
+    box-shadow: 3px 3px #000000;
     background-color: rgb(68, 5, 110);
     color: #fff;
 }

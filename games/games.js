@@ -62,6 +62,7 @@ let points = 0;
 }
 
 let segundos = 0;
+let minutos = 0;
 let time;
 function startTime() {
     time = setInterval(() => {
@@ -97,6 +98,7 @@ function resetGame(){
     secondCard = '';
     points = 0;
     segundos = 0;
+    minutos = 0;
 
     // Reset placar multiplayer
     p1Score = 0;
@@ -107,7 +109,7 @@ function resetGame(){
     if (p2ScoreEl) p2ScoreEl.textContent = '0';
 
     document.getElementById('point').textContent = '0';
-    document.getElementById('timer').textContent = '0s';
+    document.getElementById('timer').textContent = '00:00';
 
     grid.innerHTML = '';
 
