@@ -183,10 +183,10 @@ body{
 
   header {
     width: 100%;            /* Ocupar toda a largura */
-    height: auto;           /* Altura automática */
+    height: 130px;           /* Altura automática */
     flex-direction: column;
     align-items: center;
-    padding: 10px;          /* Menos espaço */
+    padding: 5px;          /* Menos espaço */
     position: fixed;        /* Ficar no topo */
     top: 0;
     left: 0;

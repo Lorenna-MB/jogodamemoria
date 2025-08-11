@@ -201,10 +201,10 @@ body{
 
   header {
     width: 100%;            /* Ocupar toda a largura */
-    height: auto;           /* Altura automática */
+    height: 130px;           /* Altura automática */
     flex-direction: column;
     align-items: center;
-    padding: 10px;          /* Menos espaço */
+    padding: 5px;          
     position: fixed;        /* Ficar no topo */
     top: 0;
     left: 0;
@@ -212,24 +212,23 @@ body{
   }
 
   body {
-    padding-top: 120px; /* Empurra o conteúdo para baixo do header */
+    padding-top: 120px;
   }
 
   .cabecalho {
     margin-bottom: 10px;
   }
 
-  /* Esconde a logo */
   .logo {
     display: none;
   }
 
-  /* Diminui o tamanho do título */
+  
   header h1 {
-    font-size: 14px; /* Menor fonte para caber */
+    font-size: 14px; 
   }
 
-  /* Placar mais compacto */
+ 
   .placar {
     width: auto;
     padding: 8px;
@@ -245,7 +244,6 @@ body{
     transform: translate(-50%, -50%);
   }
 
-  /* Botão de retorno menor */
   .buttonReturn {
     padding: 6px;
     font-size: 10px;
@@ -291,8 +289,8 @@ body{
 
 @media screen and (max-width: 480px) {
   #buttonReturn {
-    font-size: 6px;       /* Fonte ainda menor */
-    padding: 4px 8px;     /* Mais compacto */
+    font-size: 6px;       
+    padding: 4px 8px;     
     box-shadow: #000000 3px 2px;
   }
 }
@@ -300,7 +298,7 @@ body{
 @media screen and (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* cartas menores */
-    gap: 8px;
+    gap: 5px;
   }
 
   .card {
@@ -312,7 +310,7 @@ body{
 @media screen and (max-width: 480px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* cartas ainda menores */
-    gap: 6px;
+    gap: 4px;
   }
 
   .card {
