@@ -198,22 +198,37 @@ const createCards = (characterName, theme) => {
 const loadGame = () => {
     const { theme, difficulty } = config;
     let numPairs = 10; // padrão: difícil
-    if (difficulty === 'facil' || difficulty === 'fácil' || difficulty === 'easy') numPairs = 4;
-    else if (difficulty === 'medio' || difficulty === 'médio' || difficulty === 'medium') numPairs = 8;
-    // difícil ou qualquer outro valor: 5 pares
+    let sizeClass = 'large'; // tamanho da carta
+    let gridClass = 'hard';  // classe da grid
+
+    if (difficulty === 'facil' || difficulty === 'fácil' || difficulty === 'easy') {
+        numPairs = 4;
+        sizeClass = 'small';
+        gridClass = 'easy';
+    } else if (difficulty === 'medio' || difficulty === 'médio' || difficulty === 'medium') {
+        numPairs = 8;
+        sizeClass = 'medium';
+        gridClass = 'medium';
+    }
+
+    // Remove classes antigas da grid
+    grid.classList.remove('easy', 'medium', 'hard');
+    grid.classList.add(gridClass);
 
     const charactersArray = theme === 'pokemon' ? characters.pokemons : characters.hunters;
-    // Embaralha e pega só o número de pares necessários
     const selected = charactersArray.sort(() => Math.random() - 0.5).slice(0, numPairs);
     const duplicateCharacters = [...selected, ...selected];
     const shuffled = duplicateCharacters.sort(() => Math.random() - 0.5);
 
-    //Cria as cartas com frente e verso, e embaralha
+    grid.innerHTML = ''; // limpa cartas anteriores
+    
     shuffled.forEach((character) => {
         const card = createCards(character, theme);
+        card.classList.add(sizeClass);
         grid.appendChild(card);
     });
 }
+
 
 const loadScreen = () => {
     const {theme, difficulty, modo, playerName} = config;
