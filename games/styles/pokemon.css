@@ -389,9 +389,13 @@ body{
 .turn-info {
     font-family: "Press Start 2P", system-ui;
     color: #000;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 15px;
     text-shadow: 1px 1px #fff;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #ff860c;
+    border-radius: 10px;
 }
 
 #endGame {
