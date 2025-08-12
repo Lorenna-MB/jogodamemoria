@@ -78,9 +78,8 @@ body{
 #play-button {
     font-family: "Press Start 2P", system-ui;
     font-size: 30px;
-    padding-right: 50px;
-    padding-left: 50px;
-    padding: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
     background-color: #ffb006;
     color: #043a06;
     border: 3px solid #ffde07;
@@ -184,10 +183,10 @@ body{
 
   header {
     width: 100%;            /* Ocupar toda a largura */
-    height: 130px;           /* Altura automática */
+    height: 130px;          /* Altura automática */
     flex-direction: column;
     align-items: center;
-    padding: 5px;          /* Menos espaço */
+    padding: 5px;           /* Menos espaço */
     position: fixed;        /* Ficar no topo */
     top: 0;
     left: 0;
