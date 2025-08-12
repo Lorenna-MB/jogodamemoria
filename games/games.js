@@ -196,7 +196,6 @@ const checkCards = () => {
     }
 };
 
-
 //Função para virar a carta
 const revealCard = ({target}) =>{
 

@@ -368,7 +368,7 @@ body{
     box-shadow: 4px 4px rgba(255, 187, 0, 0.2);
 }
 
-.turn-info {
+.turn-info:not(:empty) {
     font-family: "Press Start 2P", system-ui;
     color: #000;
     font-size: 20px;
