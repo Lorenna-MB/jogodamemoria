@@ -20,6 +20,7 @@ html, body {
 .container {
   display: flex;
   height: 100vh; 
+  margin-bottom: 20px;
 }
 
 header {
@@ -40,7 +41,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 /*header{
