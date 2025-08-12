@@ -44,13 +44,43 @@ let firstCard= '';
 let secondCard= '';
 let points = 0;
 
-const checkEndGame = () => {
-  const disabledCards = document.querySelectorAll('.disabled-card');
+function showEndGameModal(score, time) {
+    let modal = document.createElement('div');
+    modal.className = 'endgame-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h2>Fim de Jogo!</h2>
+            <p>Pontuação: ${score}</p>
+            <p>Tempo: ${time}</p>
+            <button id="close-modal">Fechar</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    document.getElementById('close-modal').onclick = () => {
+        modal.remove();
+        resetGame();
+    };
+}
 
-  if (disabledCards.length === 20) {
-    clearInterval(this.loop);
-    alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
-  }
+const checkEndGame = () => {
+    // Seleciona todas as cartas que estão reveladas e desabilitadas
+    const revealedCards = document.querySelectorAll('.reveal-card .disabled-card');
+    let totalCards = 20; // difícil
+
+    if (config.difficulty === 'facil' || config.difficulty === 'fácil' || config.difficulty === 'easy') {
+        totalCards = 8;
+    } else if (config.difficulty === 'medio' || config.difficulty === 'médio' || config.difficulty === 'medium') {
+        totalCards = 16;
+    }
+
+    // Cada par tem duas cartas, então totalCards é o número de pares * 2
+    if (revealedCards.length === totalCards) {
+        stopTime();
+        let score = config.modo === '2' ? `P1: ${p1Score} | P2: ${p2Score}` : points;
+        let time = document.getElementById('timer').textContent;
+        showEndGameModal(score, time);
+        console.log('Fim de Jogo!');
+    }
 }
 
 //A função que é chamada sempre que duas cartas convergem e de acordo com o jogador atual.
@@ -107,6 +137,7 @@ function resetGame(){
     points = 0;
     segundos = 0;
     minutos = 0;
+    currentPlayer = 1;
 
     // Reset placar multiplayer
     p1Score = 0;
@@ -155,7 +186,6 @@ const checkCards = () => {
                 currentPlayer = currentPlayer === 1 ? 2 : 1;
                 const turnInfo = document.querySelector('.turn-info');
                 if (turnInfo) turnInfo.textContent = `Turno: Player ${currentPlayer}`;
-                sumPoints();
                 checkEndGame();
             }
         }, 650);
@@ -286,6 +316,10 @@ playButton.addEventListener('click', () => {
     document.querySelector('.player').textContent = playerName ? playerName : 'Player: Anônimo';
     startTime();
     loadGame(); 
+    if (config.modo === '2') {
+        const turnInfo = document.querySelector('.turn-info');
+        if (turnInfo) turnInfo.textContent = `Turno: Player ${currentPlayer}`;
+    }
 });
 
 botaoVoltar.addEventListener('click', () => {
