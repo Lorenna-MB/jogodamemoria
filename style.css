@@ -43,12 +43,13 @@ h2{
 }
 
 input{
+    display: flex;
     border: 2px solid #333;
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
     font-size: 1em;
-    max-width: 300px;
+    max-width: 290px;
     width: 100%;
     outline: none;
     box-shadow: 3px 2px #4f4d4d;     
@@ -129,16 +130,13 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border: none;
   border-radius: 10px;
   padding: 2rem;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  width: 90%;
   max-width: 400px;
   background-color: rgb(231, 211, 248);
-
   text-align: center; /* centraliza texto */
 }
 

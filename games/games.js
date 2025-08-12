@@ -28,6 +28,9 @@ const characters = {
 const grid = document.querySelector('.grid');
 const playerName = localStorage.getItem('player');
 const config = JSON.parse(localStorage.getItem('config'));
+const playerName1 = config.playerName;
+const playerName2 = config.player2Name || 'Player 2';
+
 let currentPlayer = 1;
 let p1Score = 0;
 let p2Score = 0;
@@ -274,7 +277,7 @@ const loadGame = () => {
 
 
 const loadScreen = () => {
-    const {theme, difficulty, modo, playerName} = config;
+    const {theme, difficulty, modo, playerName, player2Name} = config;
     
     let head = document.getElementsByTagName('HEAD')[0];
     let link = document.createElement('link');
@@ -307,9 +310,9 @@ const loadScreen = () => {
         document.querySelector('.placar-multiplayer').style.display = 'block';
         document.querySelector('.player').style.display = 'none';
         document.getElementById('player1-name').textContent = playerName || 'Player 1';
-        document.getElementById('player2-name').textContent = 'P2';
+        document.getElementById('player2-name').textContent = player2Name || 'Player 2';
     }
-};
+};;
     
 
 playButton.addEventListener('click', () => {

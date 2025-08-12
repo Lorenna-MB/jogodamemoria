@@ -6,6 +6,8 @@ const openModalButton = document.querySelector('.open-modal');
 const buttonPlayer1 = document.querySelector('.Player1');
 const buttonPlayer2 = document.querySelector('.Player2');
 const dificuldadeButtons = document.querySelectorAll('.dificuldade');
+const player2NickContainer = document.querySelector('.player2-nick-container');
+const player2NickInput = document.getElementById('player2-nick');
 
 
 //Para salvar as configurações feitas
@@ -43,10 +45,21 @@ const validateBeforeStart = () => {
         gameConfig.modo &&
         gameConfig.difficulty
     ) {
+        if (gameConfig.modo === '2') {
+            const nick2 = player2NickInput.value.trim();
+            if (nick2.length > 2 && nick2.length <= 15) {
+                gameConfig.player2Name = nick2;
+            } else {
+                alert('Nick do Player 2 deve ter entre 3 e 15 caracteres');
+                return;
+            }
+        } else {
+            gameConfig.player2Name = '';
+        }
         localStorage.setItem('config', JSON.stringify(gameConfig));
         window.location = './games';
     } else {
-        alert('Por favor, preencha todas as opções:\n- Quantidade de jogadores \n- Dificuldade \n- Tema');
+        alert('Por favor, preencha todas as opções:\n- Quantidade de jogadores \n- Dificuldade \n- Tema\n- Nick(s) válido(s)');
     }
 };
 
@@ -103,11 +116,15 @@ buttonPlayer1.addEventListener('click', () => {
     gameConfig.modo = '1';
     buttonPlayer1.classList.add('selected');
     buttonPlayer2.classList.remove('selected'); //garante que só um botão seja estilizado de acordo com o click
+    player2NickContainer.style.display = 'none'; // Esconde nick player 2
+    gameConfig.player2Name = ''; // Limpa caso tenha digitado antes
 });
 
 buttonPlayer2.addEventListener('click', () => {
     gameConfig.modo = '2';
     buttonPlayer2.classList.add('selected');
     buttonPlayer1.classList.remove('selected');
+    player2NickContainer.style.display = 'flex';
+
 });
 
