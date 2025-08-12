@@ -80,6 +80,7 @@ body{
     font-size: 30px;
     padding-right: 50px;
     padding-left: 50px;
+    padding: 10px;
     background-color: #ffb006;
     color: #043a06;
     border: 3px solid #ffde07;
@@ -381,4 +382,12 @@ body{
     font-size: 22px;
     margin-bottom: 16px;
     text-shadow: 0.4px 0.4px #ff860c;
+}
+
+#player1-name, #player2-name {
+    font-family: "Press Start 2P", system-ui;
+    color: #000;
+    font-size: 16px;
+    margin-top: 15px;
+    text-shadow: 1px 1px #fff;
 }

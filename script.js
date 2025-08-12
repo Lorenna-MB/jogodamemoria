@@ -47,7 +47,7 @@ const validateBeforeStart = () => {
     ) {
         if (gameConfig.modo === '2') {
             const nick2 = player2NickInput.value.trim();
-            if (nick2.length > 2 && nick2.length <= 15) {
+            if (nick2.length >= 2 && nick2.length <= 15) {
                 gameConfig.player2Name = nick2;
             } else {
                 alert('Nick do Player 2 deve ter entre 3 e 15 caracteres');
