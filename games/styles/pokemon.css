@@ -373,7 +373,7 @@ body{
 
 #close-modal {
     margin-top: 16px;
-    padding: 12px 24px;
+    padding: 10px;
     font-size: 16px;
     background-color: #ff860c;
     color: #fff;
@@ -389,4 +389,12 @@ body{
     font-size: 16px;
     margin-top: 15px;
     text-shadow: 1px 1px #fff;
+}
+
+#endGame {
+    font-family: "Press Start 2P", system-ui;
+    color: #000;
+    font-size: 22px;
+    margin-bottom: 16px;
+    text-shadow: 0.4px 0.4px #ff860c;
 }

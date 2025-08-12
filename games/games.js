@@ -46,10 +46,11 @@ let points = 0;
 
 function showEndGameModal(score, time) {
     let modal = document.createElement('div');
+    //Utilizando uma classe html para estilizar o modal
     modal.className = 'endgame-modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <h2>Fim de Jogo!</h2>
+            <h2 id="endGame">Fim de Jogo!</h2>
             <p>Pontuação: ${score}</p>
             <p>Tempo: ${time}</p>
             <button id="close-modal">Fechar</button>
