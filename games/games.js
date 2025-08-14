@@ -47,7 +47,7 @@ let firstCard= '';
 let secondCard= '';
 let points = 0;
 
-function showEndGameModal(score, time) {
+function showEndGameModal(score, time, winnerText = '') {
     let modal = document.createElement('div');
     //Utilizando uma classe html para estilizar o modal
     modal.className = 'endgame-modal';
@@ -56,6 +56,7 @@ function showEndGameModal(score, time) {
             <h2 id="endGame">Fim de Jogo!</h2>
             <p>Pontuação: ${score}</p>
             <p>Tempo: ${time}</p>
+            ${winnerText ? `<p>${winnerText}</p>` : ''}
             <button id="close-modal">Fechar</button>
         </div>
     `;
@@ -79,13 +80,18 @@ const checkEndGame = () => {
 
     // Cada par tem duas cartas, então totalCards é o número de pares * 2
     if (revealedCards.length === totalCards) {
-        stopTime();
-        let score = config.modo === '2' ? `P1: ${p1Score} | P2: ${p2Score}` : points;
-        let time = document.getElementById('timer').textContent;
-        showEndGameModal(score, time);
-        console.log('Fim de Jogo!');
+    stopTime();
+    let score;
+    let winnerText = '';
+    if (config.modo === '2') {
+        score = `P1: ${p1Score} | P2: ${p2Score}`;
+        winnerText = getWinner();
+    } else {
+        score = points;
     }
-}
+    let time = document.getElementById('timer').textContent;
+    showEndGameModal(score, time, winnerText);
+}}
 
 //A função que é chamada sempre que duas cartas convergem e de acordo com o jogador atual.
  function sumPoints() {
@@ -329,5 +335,14 @@ botaoVoltar.addEventListener('click', () => {
     window.location.href = '../index.html';
 });
 
+function getWinner() {
+    if (p1Score > p2Score) {
+        return `${playerName1 || 'Player 1'} venceu!`;
+    } else if (p2Score > p1Score) {
+        return `${playerName2 || 'Player 2'} venceu!`;
+    } else {
+        return 'Empate!';
+    }
+}
 
 loadScreen();
