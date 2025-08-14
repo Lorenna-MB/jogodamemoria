@@ -25,7 +25,7 @@ html, body {
 
 header {
   font-family: 'Pokemon Hollow', sans-serif;
-  width: 350px;
+  width: 400px;
   background-color: #c0dfff;
   color: rgb(64, 64, 64);
   padding: 20px;
@@ -396,6 +396,7 @@ body{
     padding: 15px;
     background-color: #ff860c;
     border-radius: 10px;
+    box-shadow: 2px 2px #000000;
 }
 
 #endGame {

@@ -65,6 +65,7 @@ header h1{
     width: 300px;
     margin: 0;
     flex-direction: column;
+    box-shadow: 2px 2px #000000;
 }
 
 body{
@@ -377,6 +378,7 @@ body{
     padding: 15px;
     background-color: #ff860c;
     border-radius: 10px;
+    box-shadow: 2px 2px #000000;
 }
 
 #endGame {
