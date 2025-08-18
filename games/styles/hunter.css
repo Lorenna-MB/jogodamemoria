@@ -270,6 +270,10 @@ body{
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .cabecalho {
+    font-size: 0px;
+}
 }
 
 @media screen and (max-width: 480px) {
@@ -278,6 +282,19 @@ body{
     padding: 4px 8px;     /* Mais compacto */
     box-shadow: #000000 3px 2px;
   }
+  #pontuacao {
+    font-size: 0px; /* Esconde a pontuação */
+}
+
+.cabecalho h1 {
+    font-size: 0px; /* Esconde o cabeçalho */
+}
+
+.placar-multiplayer .p1,
+.placar-multiplayer .p2 {
+    font-size: 0px;
+}
+
 }
 
 @media screen and (max-width: 768px) {
@@ -399,4 +416,12 @@ body{
 
 .espacoPontos{
   margin-top: 5px;
+}
+
+#pontuacao {
+    font-size: 0px; /* Esconde a pontuação */
+}
+
+.cabecalho h1 {
+    font-size: 0px; /* Esconde o cabeçalho */
 }
