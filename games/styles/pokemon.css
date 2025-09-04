@@ -20,7 +20,6 @@ html, body {
 .container {
   display: flex;
   height: 100vh; 
-  margin-bottom: 20px;
 }
 
 header {
@@ -141,8 +140,7 @@ body{
     gap: 15px;
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
-    
+    margin: 0 auto;  
 }
 
 .card{
